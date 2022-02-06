@@ -1,0 +1,99 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 8 projects with a relocated document root",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.0",
+        "drupal/ajax_comments": "^1.0@beta",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-project-message": "^9",
+        "drupal/core-recommended": "9.2.7",
+        "drupal/country_path": "^1.5",
+        "drupal/devel": "^4.1",
+        "drupal/domain": "^1.0@beta",
+        "drupal/entity_language_fallback": "^1.4",
+        "drupal/entityqueue": "^1.2",
+        "drupal/layout_builder_at": "^2.12",
+        "drupal/layout_builder_st": "^1.0@alpha",
+        "drupal/pathauto": "^1.8",
+        "drupal/pfm": "^1.2",
+        "drupal/tmgmt": "^1.12",
+        "drupal/tmgmt_google": "^1.0",
+        "drush/drush": "^10.2",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": ".web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "composer-exit-on-patch-failure": true,
+        "enable-patching": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/core": {
+                "Buu1": "patches/2946333-238-new.patch",
+                "Buu2": "https://www.drupal.org/files/issues/2021-01-29/allow-synced-default-lb-translations.3044993.48.patch",
+                "Buu3": "https://www.drupal.org/files/issues/2021-08-17/3180702-layout_builder-uuid-copy-export-only.13.patch"
+            },
+            "drupal/layout_builder_at": {
+                "Buufff": "https://www.drupal.org/files/issues/2021-03-19/3204485-2.patch",
+                "Buu2": "https://www.drupal.org/files/issues/2021-04-29/layout_builder_at.support_block_uuid.patch"
+            },
+            "drupal/tmgmt": {
+                "Baaaa": "https://www.drupal.org/files/issues/2021-10-06/tmgmt-8.9.x.patch"
+            }
+        }
+    }
+}
