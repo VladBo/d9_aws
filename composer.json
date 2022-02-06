@@ -15,15 +15,18 @@
         }
     ],
     "require": {
+        "aws/aws-sdk-php": "^3.209",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0",
-        "drupal/ajax_comments": "^1.0@beta",
+        "drupal/amazon_sns": "^1.1",
+        "drupal/aws_sqs": "^1.0",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "9.2.7",
         "drupal/devel": "^4.1",
         "drupal/pathauto": "^1.8",
+        "drupal/s3fs": "^3.0@beta",
         "drush/drush": "^10.2",
         "vlucas/phpdotenv": "^2.4"
     },
